@@ -37,8 +37,8 @@ const addValues = (arr, value) => {
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  for (var i = 0; i < times; i++) {
-    callback(arr, num);
+  for(var i = 0; i < times ; i++){    // what's the other way to do this?
+    arr.push(num);
   }
   return arr;
 };
@@ -62,13 +62,7 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  var list = [];
-  availableItems.forEach(element => {
-    if (element.available === true) {
-      list.push(element.name);
-    }
-  });
-  return list;
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,11 +80,7 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  arr.forEach(element => {
-    if (element % 3 === 0) {
-      arr.push()
-    }
-  });
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
