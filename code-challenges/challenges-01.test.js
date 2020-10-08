@@ -88,7 +88,7 @@ Return the resulting output array.
 const fizzbuzz = (arr) => {
   arr.forEach(element => {
     if (element % 3 === 0) {
-      arr.push()
+      arr.push(element);
     }
   });
 };
