@@ -1,6 +1,6 @@
 from linked_list.linked_list import Node, LinkedList
 
-def test_instantiation():
+def test_instantiat():
 	initialList = LinkedList()
 	assert initialList.head == None
 
@@ -18,7 +18,7 @@ def test_insertion():
 
 
 
-def test_return_all_values():
+def test_all_val():
 	initialList = LinkedList()
 	initialList.insert(5)
 	initialList.insert(6)
