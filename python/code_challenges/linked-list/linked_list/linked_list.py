@@ -1,5 +1,5 @@
 class Node:
-    def __init__(self, value=None, next=None):
+    def __init__(self ,value=None, next=None):
         self.value = value
         self.next = next
 
@@ -28,3 +28,19 @@ class LinkedList:
             current = current.next
         result += "NULL"
         return result
+
+    def kthFromEnd(self,k):
+        count = -1
+        current = self.head
+        if current == None:
+          return
+        while current:
+            count += 1
+            current = current.next
+        current = self.head
+        while current:
+            if count == k :
+                return current.value
+            count -= 1
+            current = current.next
+

@@ -25,3 +25,12 @@ def test_all_val():
 	initialList.insert(7)
 	initialList.insert(8)
 	assert str(initialList) == '8 ->7 ->6 ->5 ->NULL'
+
+def test_kthFromEnd():
+    initialList = LinkedList()
+    initialList.insert(5)
+    initialList.insert(6)
+    initialList.insert(7)
+    initialList.insert(8)
+    actual = initialList.kthFromEnd(0)
+    assert actual == 5
