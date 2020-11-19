@@ -44,3 +44,5 @@ class LinkedList:
             count -= 1
             current = current.next
 
+    def zipLists(list1, list2):
+        
