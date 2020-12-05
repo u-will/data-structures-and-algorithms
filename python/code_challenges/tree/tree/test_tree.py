@@ -66,3 +66,13 @@ def test_breath_frist():
     tree_node.root.right.left = Node(6)
     tree_node.root.right.right = Node(7)
     assert tree_node.breath_frist() == [ 2, 3, 4, 5, 6, 7]
+
+def test_find_maximum_value():
+    tree_node = BinarySearchTree()
+    tree_node.add(8)
+    tree_node.add(85)
+    tree_node.add(6)
+    tree_node.add(105)
+    tree_node.add(101)
+    tree_node.add(15)
+    assert tree_node.find_maximum_value() = 105

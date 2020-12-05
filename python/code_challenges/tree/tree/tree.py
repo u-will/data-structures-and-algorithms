@@ -90,6 +90,15 @@ class BinaryTree:
             value.append(val)
         return value
 
+    def find_maximum_value(self):
+        def walk(root):
+            if not root.value:
+                return
+            else:
+                return max(root.left.value, max(walk(root.right), walk(root.value)))
+        return walk(self.root)
+
+
 
 
 
