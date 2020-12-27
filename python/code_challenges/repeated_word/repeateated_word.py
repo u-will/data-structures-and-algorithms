@@ -8,4 +8,3 @@ def repeate (paragraph):
         List.append(word.lower())
     return ''
 
-repeate ('Once upon a time in a castle')
