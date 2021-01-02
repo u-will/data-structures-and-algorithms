@@ -3,6 +3,7 @@ def test_empty_string():
     actual = check("")
     expected = True
     assert actual == expected
+
 def test_unmatched_openner():
     actual1 = check("{")
     actual2 = check("(")
@@ -11,14 +12,21 @@ def test_unmatched_openner():
     assert actual1 == expected
     assert actual2 == expected
     assert actual3 == expected
+
 def test_unmatched_closer():
     actual1 = check("}")
     actual2 = check(")")
-    actual3 = check("]")
+    actual3 = check("]}")
     expected = False
     assert actual1 == expected
     assert actual2 == expected
     assert actual3 == expected
+
+def test_unmatched_openner_and_closer():
+    actual = check("{(})")
+    expected = False
+    assert actual == expected
+
 def test_proper_brackets():
     actual1 = check("{[()]}")
     actual2 = check("{}")
