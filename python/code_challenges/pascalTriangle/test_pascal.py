@@ -6,6 +6,11 @@ def test_print():
     expected = [[1], [1,1], [1,2,1]]
     assert actual == expected
 
+def test_print_4():
+    actual = pascal(4)
+    expected = [[1], [1,1], [1,2,1], [1,3,3,1]]
+    assert actual == expected
+
 def test_string_input():
     actual = pascal("n")
     expected = None
