@@ -1,3 +1,4 @@
+from ....python.stacks_and_queues import Queue
 class Graph:
     def __init__(self):
         #Called an Adjacency List but it's really a Dictionary here
@@ -25,6 +26,23 @@ class Graph:
 
     def Size(self):
         return len(self._adjacency_list)
+
+    def BreathFirst(self, vertex):
+        visited_vertex = [vertex]
+        queue = Queue()
+        queue.enqueue(vertex)
+
+        while not queue.is_empty():
+            vertex = queue.dequeue()
+
+            neighbors = [edge.vertex for edge in self.GetNeighbors(vertex)]
+
+            for neighbor in neighbors:
+                if neighbor not in visited_vertex:
+                    visited_vertex.append(neighbor)
+                    queue.enqueue(neighbor)
+
+        return visited_vertex
 
 class Vertex:
     def __init__(self, value):
