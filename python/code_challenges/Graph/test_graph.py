@@ -1,4 +1,4 @@
-from graph import Graph, Vertex, Edge
+from graph import Graph, Vertex, Edge, BreathFirst
 
 def test_addNode():
     graph = Graph()
@@ -99,3 +99,40 @@ def test_neighbors_with_custom_weight():
     actual = neighbor[0].weight
     expected = 44
     assert actual == expected
+
+def test_BreathFirst():
+    graph = Graph()
+    banana = graph.AddNode('banana')
+    apple = graph.AddNode('apple')
+    bread = graph.AddNode('bread')
+    coffee = graph.AddNode('coffee')
+    pineapple = graph.AddNode('pineapple')
+    chocolate = graph.AddNode('chocolate')
+    orange = graph.AddNode('orange')
+
+    graph.AddEdge(banana, apple, 10)
+    graph.AddEdge(banana, apple, 10)
+    graph.AddEdge(bread, apple,15)
+    graph.AddEdge(coffee, apple, 20)
+    graph.AddEdge(apple, banana, 10)
+    graph.AddEdge(apple, banana, 10)
+    graph.AddEdge(apple, bread, 15)
+    graph.AddEdge(apple, coffee, 20)
+    graph.AddEdge(coffee, orange, 10)
+    graph.AddEdge(orange, coffee,  10)
+    graph.AddEdge(chocolate, orange, 14)
+    graph.AddEdge(orange, chocolate, 14)
+    graph.AddEdge(pineapple, chocolate, 21)
+    graph.AddEdge(chocolate, pineapple, 21)
+    graph.AddEdge(chocolate, banana, 15)
+    graph.AddEdge(banana, chocolate, 15)
+    graph.AddEdge(bread, banana, 20)
+    graph.AddEdge(banana, bread, 20)
+    graph.AddEdge(chocolate, bread, 11)
+    graph.AddEdge(bread, chocolate, 11)
+
+    expected = [apple, coffee, bread, banana, orange, chocolate, pineapple]
+    actual = BreathFirst(apple)
+
+    assert actual == expected
+
