@@ -12,7 +12,7 @@ def direct_flights(graph, location):
     for origin_name, destination_name in zip(location, location[1:])
         nodes = graph.GetNodes()
         origin_node = None
-
+ 
         for candidate_node in nodes:
             if candisdate_node.value == origin_name:
                 origin_node = candidate_node
